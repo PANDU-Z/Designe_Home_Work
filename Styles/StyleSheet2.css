@@ -1,0 +1,173 @@
+﻿/* Общие стили */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Контейнер для всех элементов */
+.container {
+    display: flex;
+    flex: 1;
+}
+
+/* Сайдбар */
+.sidebar {
+    width: 30%;
+    padding: 0; /* Убираем внутренние отступы */
+    position: relative; /* Относительное позиционирование для дочерних элементов */
+}
+
+    .sidebar h1 {
+        font-family: 'JosefinSans-Regular';
+        position: absolute;
+        top: 310px; /* Расстояние от верхнего края */
+        left: 80px; /* Расстояние от левого края */
+        font-size: 42px;
+        margin: 0;
+    }
+
+    .sidebar nav {
+        font-family: 'Bebas Neue';
+        position: absolute;
+        bottom: 340px; /* Расстояние от нижнего края */
+        left: 40px; /* Расстояние от левого края */
+    }
+
+        .sidebar nav ul li {
+            margin-bottom: 35px;
+        }
+
+            .sidebar nav ul li a {
+                font-size: 32px;
+                text-decoration: none;
+                color: white;
+            }
+
+.contact-info p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* Основной контент */
+.main-content {
+    width: 70%;
+    position: relative;
+}
+
+    .main-content img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+/* Подвал */
+footer {
+    font-family: 'Bebas Neue';
+    width: 100%;
+    padding: 20px 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: white;
+    font-size: 16px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center; /* Центрируем содержимое горизонтально */
+    align-items: center; /* Центрируем содержимое по одной линии */
+    gap: 120px; /* Расстояние между элементами */
+    text-align: center;
+    flex-wrap: wrap; /* Учитываем адаптацию для маленьких экранов */
+}
+
+footer-container-media {
+    display: flex;
+    justify-content: center; /* Центрируем содержимое горизонтально */
+    align-items: center; /* Центрируем содержимое по одной линии */
+    gap: 30px; /* Расстояние между элементами */
+    text-align: center;
+    flex-wrap: wrap; /* Учитываем адаптацию для маленьких экранов */
+}
+
+    .footer-container span {
+        white-space: nowrap; /* Запрещаем перенос строк для равномерного отображения */
+    }
+
+ul {
+    list-style: none;
+}
+
+/* --- Адаптивность через Media Queries --- */
+
+/* Экраны до 1024px */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+    }
+
+        .sidebar h1 {
+            position: static;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar nav {
+            position: static;
+            margin: 20px 0;
+        }
+
+            .sidebar nav ul li a {
+                font-size: 24px;
+            }
+
+    .main-content {
+        width: 100%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* Экраны до 768px */
+@media (max-width: 768px) {
+    .sidebar h1 {
+        font-size: 28px;
+    }
+
+    .sidebar nav ul li a {
+        font-size: 20px;
+    }
+
+    .footer-container span {
+        font-size: 14px;
+    }
+}
+
+/* Экраны до 480px */
+@media (max-width: 480px) {
+    .sidebar nav ul li {
+        margin-bottom: 15px;
+    }
+
+        .sidebar nav ul li a {
+            font-size: 18px;
+        }
+
+    .footer-container span {
+        font-size: 12px;
+    }
+}
